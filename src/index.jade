@@ -13,13 +13,15 @@ html
 
     link(href='http://fonts.googleapis.com/css?family=Montserrat:700,400', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")*/
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js")
     //- script(src="http://static.echonest.com/enspex/web/common/spotify_en_tools.js")
     script(src="scripts/app.js")
   body
-    video#video.fullscreen(autoplay="true")
+    div.video-wrapper
+      video#video.fullscreen(autoplay="true")
     canvas#canvas.hidden
-    div#black-cover.fullscreen
+    div#black-cover.fullscreen.blur
     div#face-hole
 
     div.spinner
@@ -32,8 +34,10 @@ html
     div.container
       :markdown
         ### MUSIC FACE
+
+        Your face, Your playlist
     
-    div#info-page
+    div#info-page.hidden
 
     button#snap-a-pic.button
       | Oh Snap!
@@ -42,3 +46,11 @@ html
       | Re-Snap!
 
     div#spotify-container
+
+    //- img(src='images/Mash-Ape.png')
+    //- img(src='images/spotify.png')
+    a.lahacks(href='http://lahacks.com/')
+      img(src='images/lahacks.jpeg')
+    a.challenge-post(href='http://challengepost.com/software/musicface')
+      img(src='images/challenge_post.png')
+    //- img(src='images/facepp_inside.png')

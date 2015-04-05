@@ -9,21 +9,13 @@ window.onload = function () {
     return document.getElementById(id_);
   };
 
-  var toggleClass = function (toggleClass, el) {
-    var current = el.className.split(/\s+/);
-    var exist   = ~current.indexOf(toggleClass);
-    el.className = (exist ?
-      (current.splice(-exist >> 1, 1), current) :
-      current.concat([toggleClass])).join(' ');
-  };
-
   var resetState = function () {
-    $('.container').hide().slideDown();
-    $('#snap-a-pic').text('Oh Snap!').unbind('click').bind('click', onSnapClick).hide().fadeIn();
-    $('#face-hole').hide().fadeIn();
+    $('.container').jAnimate('fadeInDown');
+    $('#snap-a-pic').text('Oh Snap!').unbind('click').bind('click', onSnapClick).jAnimate('fadeInUp');
+    $('#face-hole').jAnimateSequence(['fadeIn', 'pulse']);
     $('.spinner').hide();
     $('#reset').hide();
-    $('#info-page').empty().hide();
+    $('#info-page').empty().addClass('hidden').hide();
     $('#spotify-container').empty().removeClass('full-opaque').hide();
     $('#black-cover').removeClass('opaque');
   };
@@ -34,13 +26,14 @@ window.onload = function () {
 
   $('#reset').click(resetState);
 
-  var faceplusplus = 'https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling&url=';
+  var faceplusplus = 'https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?attribute=gender%2Cage%2Crace%2Csmiling&url=';
   var mashape_key = 'XbmNOSMyh1mshjifthNWAvBhco6np1Sn700jsn8yJcTaZwgSrv';
 
   var onVideo = function (stream) {
     console.log('Got video stream!');
     video.src = window.URL.createObjectURL(stream);
     video.play();
+    $('#face-hole').show().jAnimateOnce('pulse');
   };
 
   var videoError = function (err) {
@@ -104,7 +97,6 @@ window.onload = function () {
         var largest = findLargestFace(result.face);
         if (largest !== null) {
           var face = largest.attribute;
-          // TODO: show intermediary info page
           var options = convertFaceAttrsToEchoNest(face);
           showInfoPage(face, options);
         } else {
@@ -128,15 +120,15 @@ window.onload = function () {
   };
   
   var showInfoPage = function (face, options) {
-    $('.spinner').fadeOut();
-    $('#face-hole').fadeOut();
+    $('.spinner').jAnimate('fadeOut');
+    $('#face-hole').jAnimate('fadeOut');
     $('#snap-a-pic').unbind('click').bind('click', function () {
-      $('#snap-a-pic').slideUp();
-      $('#info-page').fadeOut();
-      $('.spinner').fadeIn();
+      $('#snap-a-pic').jAnimate('fadeOutDown');
+      $('#info-page').jAnimate('fadeOut');
+      $('.spinner').show().jAnimate('fadeIn');
       fetchPlaylistFromFacialData(options);
     });
-    $('#snap-a-pic').text('Playlist');
+    $('#snap-a-pic').text('Get Playlist');
     var age = face.age.value - 5;
     var gender = face.gender.value;
     var race = face.race.value;
@@ -145,7 +137,7 @@ window.onload = function () {
     var html =  '<h3>~' + age + '-year-old, ' + race + ', ' + gender + '</h3>\n' +
       '<h3>Mood rating: ' + face.smiling.value + '/100</h3>\n' +
       '<h3>You might like some ' + type + ' ' + genres + ' music</h3>';
-    $('#info-page').html(html).fadeIn();
+    $('#info-page').html(html).removeClass('hidden').show().jAnimate('fadeInUp');
   };
 
   var uploadImage = function (image) {
@@ -174,10 +166,10 @@ window.onload = function () {
   var onSnapClick = function () {
     console.log('snap a pic');
     console.log('get playlist');
-    //$('#snap-a-pic').slideUp();
+    $('#face-hole').show().jAnimateOnce('flash');
     $('#canvas').hide();
     $('#black-cover').addClass('opaque');
-    $('.spinner').fadeIn();
+    $('.spinner').show().jAnimate('fadeIn');
     resize();
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -303,10 +295,9 @@ window.onload = function () {
           } else {
             var frame = getSpotifyPlayButtonForPlaylist('MusicFace', songs);
             $('#spotify-container').append(frame);
-            $('#spotify-container').show().addClass('full-opaque');
-            $('.spinner').fadeOut();
-            $('#face-hole').fadeOut();
-            $('#reset').removeClass('hidden').slideDown();
+            $('#spotify-container').show().jAnimate('fadeInUp');
+            $('.spinner').jAnimate('fadeOut');
+            $('#reset').removeClass('hidden').show().jAnimate('fadeInUp');
           }
         }
       }, error: function(jqXHR, textStatus, errorThrown) {
