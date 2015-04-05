@@ -1,0 +1,44 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title MusicFace
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(type='text/css', href='http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css', rel='stylesheet')
+    link(rel="stylesheet", href="stylesheets/base.css")
+    link(rel="stylesheet", href="stylesheets/main.css")
+    link(rel="stylesheet", href="stylesheets/animate.css")
+
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:700,400', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")*/
+    //- script(src="http://static.echonest.com/enspex/web/common/spotify_en_tools.js")
+    script(src="scripts/app.js")
+  body
+    video#video.fullscreen(autoplay="true")
+    canvas#canvas.hidden
+    div#black-cover.fullscreen
+    div#face-hole
+
+    div.spinner
+      div.rect1
+      div.rect2
+      div.rect3
+      div.rect4
+      div.rect5
+
+    div.container
+      :markdown
+        ### MUSIC FACE
+    
+    div#info-page
+
+    button#snap-a-pic.button
+      | Oh Snap!
+
+    button#reset.button.hidden
+      | Re-Snap!
+
+    div#spotify-container
