@@ -1,0 +1,314 @@
+/* line 1, ../../src/stylesheets/main.sass */
+.fullscreen {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-size: cover;
+}
+
+/* line 11, ../../src/stylesheets/main.sass */
+canvas {
+  z-index: -100;
+}
+
+/* line 14, ../../src/stylesheets/main.sass */
+video {
+  background: -webkit-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -moz-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -ms-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -o-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  z-index: -110;
+}
+
+/* line 22, ../../src/stylesheets/main.sass */
+.opaque {
+  opacity: 0.85 !important;
+}
+
+/* line 25, ../../src/stylesheets/main.sass */
+.full-opaque {
+  opacity: 1 !important;
+}
+
+/* line 28, ../../src/stylesheets/main.sass */
+#black-cover {
+  background: -webkit-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -moz-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -ms-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: -o-linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  background: linear-gradient(90deg, #16222a 10%, #3a6073 90%);
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+/* line 37, ../../src/stylesheets/main.sass */
+#face-hole {
+  width: 65vh;
+  height: 65vh;
+  border: 0.3rem solid whitesmoke;
+  border-radius: 50%;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 49, ../../src/stylesheets/main.sass */
+.container {
+  position: fixed;
+  text-align: center;
+  height: 6rem;
+  width: 50rem;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin-top: 6rem;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 61, ../../src/stylesheets/main.sass */
+.container h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  font-size: 4rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* line 70, ../../src/stylesheets/main.sass */
+#info-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13rem;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-align: center;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 86, ../../src/stylesheets/main.sass */
+#info-page h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+/* line 92, ../../src/stylesheets/main.sass */
+#info-page p {
+  color: #c5c5c5;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 1.9rem;
+}
+
+/* line 98, ../../src/stylesheets/main.sass */
+.button {
+  position: fixed;
+  bottom: 4%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30rem;
+  height: 8rem;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* line 115, ../../src/stylesheets/main.sass */
+#snap-a-pic {
+  background: #85d8ce;
+  border-bottom: 2px solid #14947b;
+  -webkit-box-shadow: inset 0 -2px #14947b;
+  box-shadow: inset 0 -2px #14947b;
+}
+
+/* line 121, ../../src/stylesheets/main.sass */
+#reset {
+  background: #bd8616;
+  border-bottom: 2px solid #825c0f;
+  -webkit-box-shadow: inset 0 -2px #825c0f;
+  box-shadow: inset 0 -2px #825c0f;
+}
+
+/* line 127, ../../src/stylesheets/main.sass */
+.hidden {
+  display: none;
+}
+
+/* line 130, ../../src/stylesheets/main.sass */
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+}
+
+/* line 142, ../../src/stylesheets/main.sass */
+.spinner > div {
+  display: inline-block;
+  height: 100%;
+  width: 6px;
+  background-color: #79d2bc;
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+/* line 151, ../../src/stylesheets/main.sass */
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+/* line 155, ../../src/stylesheets/main.sass */
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+/* line 159, ../../src/stylesheets/main.sass */
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+/* line 163, ../../src/stylesheets/main.sass */
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  /* line 168, ../../src/stylesheets/main.sass */
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+  }
+
+  /* line 170, ../../src/stylesheets/main.sass */
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes stretchdelay {
+  /* line 174, ../../src/stylesheets/main.sass */
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+
+  /* line 177, ../../src/stylesheets/main.sass */
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+
+/* line 181, ../../src/stylesheets/main.sass */
+#spotify-container {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+/* line 190, ../../src/stylesheets/main.sass */
+#spotify-container .centered {
+  text-align: center;
+}
+/* line 193, ../../src/stylesheets/main.sass */
+#spotify-container h1 {
+  text-align: center;
+}
+/* line 196, ../../src/stylesheets/main.sass */
+#spotify-container h2 {
+  text-align: center;
+}
+/* line 199, ../../src/stylesheets/main.sass */
+#spotify-container #info {
+  margin: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+/* line 204, ../../src/stylesheets/main.sass */
+#spotify-container #footer {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 210, ../../src/stylesheets/main.sass */
+#spotify-container .sp-album-art {
+  width: 300px;
+  height: 300px;
+}
+/* line 214, ../../src/stylesheets/main.sass */
+#spotify-container .sp-title {
+  width: 280px;
+  height: 28px;
+  font-size: 18px;
+  padding-left: 8px;
+  padding-right: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* line 224, ../../src/stylesheets/main.sass */
+#spotify-container .sp-info {
+  text-align: center;
+}
+/* line 227, ../../src/stylesheets/main.sass */
+#spotify-container .sp-controls {
+  margin-top: 4px;
+}
+/* line 230, ../../src/stylesheets/main.sass */
+#spotify-container .sp-artist {
+  text-align: center;
+  width: 280px;
+  height: 28px;
+  font-size: 14px;
+  padding-left: 8px;
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 241, ../../src/stylesheets/main.sass */
+#spotify-container .sp-player {
+  background-color: #111111;
+  color: white;
+  width: 300px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
