@@ -12,13 +12,16 @@
     <link rel="stylesheet" href="stylesheets/animate.css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">*/</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js"></script>
     <script src="scripts/app.js"></script>
   </head>
   <body>
-    <video id="video" autoplay="true" class="fullscreen"></video>
+    <div class="video-wrapper">
+      <video id="video" autoplay="true" class="fullscreen"></video>
+    </div>
     <canvas id="canvas" class="hidden"></canvas>
-    <div id="black-cover" class="fullscreen"></div>
+    <div id="black-cover" class="fullscreen blur"></div>
     <div id="face-hole"></div>
     <div class="spinner">
       <div class="rect1"></div>
@@ -28,11 +31,12 @@
       <div class="rect5"></div>
     </div>
     <div class="container"><h3 id="music-face">MUSIC FACE</h3>
+<p>Your face, Your playlist</p>
 
     </div>
-    <div id="info-page"></div>
+    <div id="info-page" class="hidden"></div>
     <button id="snap-a-pic" class="button">Oh Snap!</button>
     <button id="reset" class="button hidden">Re-Snap!</button>
-    <div id="spotify-container"></div>
+    <div id="spotify-container"></div><a href="http://lahacks.com/" class="lahacks"><img src="images/lahacks.jpeg"></a><a href="http://challengepost.com/software/musicface" class="challenge-post"><img src="images/challenge_post.png"></a>
   </body>
 </html>
